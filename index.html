@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='icon' href='https://media1.tenor.com/images/4cfe0cf48bdad624a38151c1e6ac6f3c/tenor.gif?itemid=4818184'>
+
+        <style>
+            h1 {
+                text-align: center;
+                border-bottom: 4px ridge black;
+                margin-right: 3%;
+                margin-left: 3%;
+                margin-bottom: 30%;
+            }
+        </style>
+    </head>
+    <body>
+    <!-- main -->
+        <h1> You have sadly been here for <span id='countup'>0</span> <span id='grammar0'>seconds</span>. </h1>
+    <!-- script -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            window.setInterval(()=>{
+                let c = parseFloat($('#countup')[0].textContent);
+                let g = 'seconds';
+
+                if(c == 0){g = 'second'}else{g = 'seconds'}
+                
+                $('#countup').html(c + 1);
+                $('#grammar0').html(g)
+                
+                if(c == 86400000){
+                    $('<h2>')
+                        .html('man what the actual hell are you doing here')
+                        .css('text-align', 'center')
+                        .appendTo('body')
+                }
+            }, 1000)
+        </script>
+    </body>
+</html>
